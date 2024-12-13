@@ -13,31 +13,38 @@
 //   hobbies: ["Sports", "Cooking"],
 //   role: [2, "author"],
 // };
+
 // const ADMIN = 0;
 // const READ_ONLY = 1;
 // const AUTHOR = 2;
-var Role;
-(function (Role) {
-    Role["ADMIN"] = "ADMIN";
-    Role[Role["READ_ONLY"] = 100] = "READ_ONLY";
-    Role["AUTHOR"] = "AUTHOR";
-})(Role || (Role = {}));
-var person = {
-    name: "jaebum",
-    age: 30,
-    hobbies: ["Sports", "Cooking"],
-    role: Role.AUTHOR,
+
+enum Role {
+  ADMIN = "ADMIN",
+  READ_ONLY = 100,
+  AUTHOR = "AUTHOR",
+}
+
+const person = {
+  name: "jaebum",
+  age: 30,
+  hobbies: ["Sports", "Cooking"],
+  role: Role.AUTHOR,
 };
+
 // person.role.push("admin");
 // person.role[1] = 10;
+
 //person.role = [0, "admin", "user"];
-var favoriteActivities;
+
+let favoriteActivities: string[];
 favoriteActivities = ["Sports"];
+
 console.log(person.name);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toUpperCase());
+
+for (const hobby of person.hobbies) {
+  console.log(hobby.toUpperCase());
 }
+
 if (person.role === Role.AUTHOR) {
-    console.log("is author");
+  console.log("is author");
 }
